@@ -1,7 +1,0 @@
-#
-sudo docker run -d -p 80:3838 -v /var/log/shiny-server:/var/log/shiny-server -v ~/Shiny:/srv/shiny-server -v ~/Shiny/lib:/stf/biosrc/siemersn/R/lib allshiny.11.2018
-
-##docker run -m 14G --cpus=3 -d -p 3838:3838 -v /scratch/shiny:/srv/shiny-server -v /scratch/shiny/lib:/stf/biosrc/siemersn/R/lib allshiny
-
-
-
