@@ -1,30 +1,35 @@
 FROM rocker/shiny-verse
 
-RUN cat /etc/apt/sources.list
+##RUN cat /etc/apt/sources.list
 
-ADD sources.list /etc/apt/sources.list
+##ADD sources.list /etc/apt/sources.list
 
-RUN cat /etc/apt/sources.list
+##RUN cat /etc/apt/sources.list
 
 
 ##RUN rm -rf /var/lib/apt/lists/* && apt-get clean && \
-RUN    apt-get update && \
-apt-get install -y \
+
+##RUN    apt-get update && \
+
+
+RUN apt-get install -y \
      sudo gdebi-core  pandoc  pandoc-citeproc libcurl4-gnutls-dev \
      libcairo2-dev   libxt-dev  libjpeg-dev  wget \
-      libssl-dev libxml2-dev pandoc psmisc git dselect libmariadbclient-dev
+      libssl-dev libxml2-dev pandoc psmisc dselect libmariadbclient-dev
+## git removed above
+##RUN    apt-get update && \
 
-RUN    apt-get update && \
-apt-get install -y \
+RUN apt-get install -y \
 	libhdf5-dev 
 
 ## devtools and Seurat are a pain in the ass, install them first.
 
-RUN Rscript -e 'install.packages("devtools")'
+## RUN Rscript -e 'install.packages("devtools")'
 
 RUN Rscript -e 'options("BioC_mirror" = "https://bioconductor.org"); setRepositories(ind = 1:2); install.packages("Seurat") '
 
 ## install a bunch of packages
+
 ADD r-package-install.R r-package-install.R
 RUN Rscript r-package-install.R
 
