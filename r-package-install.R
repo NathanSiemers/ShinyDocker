@@ -1,9 +1,9 @@
 sessionInfo()
 
 local({
-r <- getOption("repos")
-r["CRAN"] <- "http://cran.cnr.berkeley.edu/"
-options(repos = r)
+   r <- getOption("repos");
+   r["CRAN"] <- "https://cran.rstudio.com/"
+   options(repos=r)
 })
 
 qwc = function(...) { as.character( unlist( as.list( match.call() )[ -1 ] ) ) }
@@ -41,7 +41,6 @@ ggridges,
 ggridges,
 ggthemes,
 glue,
-grid,
 gridExtra,
 gtable,
 knitr,
@@ -69,13 +68,12 @@ shinycssloaders,
 shinydashboard,
 shinyjs,
 shinythemes,
-stats,
 stringdist,
 stringr,
 tidyverse,
 viridis
 
-) )
+) ) }
 
 
 install_it()
