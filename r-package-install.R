@@ -8,6 +8,9 @@ local({
 
 qwc = function(...) { as.character( unlist( as.list( match.call() )[ -1 ] ) ) }
 
+
+
+
 install_it = function() {
 install.packages( qwc (
 
@@ -15,21 +18,15 @@ Biostrings,
 DT,
 GEOquery,
 GGally,
-GGally,
 Hmisc,
 RColorBrewer,
 RCurl,
-RCurl,
 RMySQL,
 Rtsne,
-Rtsne,
-Seurat,
 amap,
 bigmemory,
 boot,
 data.table,
-devtools,
-devtools,
 doMC,
 doParallel,
 editData,
@@ -38,7 +35,6 @@ foreach,
 ggplot2,
 ggpubr,
 ggridges,
-ggridges,
 ggthemes,
 glue,
 gridExtra,
@@ -46,9 +42,7 @@ gtable,
 knitr,
 magrittr,
 openssl,
-openssl,
 org.Hs.eg.db,
-pheatmap,
 pheatmap,
 plot,
 plotly,
