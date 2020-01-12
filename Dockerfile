@@ -49,6 +49,8 @@ RUN Rscript -e 'options("BioC_mirror" = "https://bioconductor.org"); setReposito
 ADD r-package-install.R r-package-install.R
 RUN Rscript r-package-install.R
 
+RUN Rscript -e  'devtools::install_github("homerhanumat/shinyCustom")'
+
 ## make the custom rsqlite with 32K+ columns supported
 ## necessary for TCGAGTEX and PC3, etc
 RUN Rscript -e 'install.packages("DBI")'
