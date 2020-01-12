@@ -1,27 +1,22 @@
 sessionInfo()
 
-local({
-   r <- getOption("repos");
-   r["CRAN"] <- "https://cran.rstudio.com/"
-   options(repos=r)
-})
+## local({
+##    r <- getOption("repos");
+##    r["CRAN"] <- "https://cran.rstudio.com/"
+##    options(repos=r)
+## })
 
 qwc = function(...) { as.character( unlist( as.list( match.call() )[ -1 ] ) ) }
 
 
-
-
 install_it = function() {
-install.packages( qwc (
-
-Biostrings,
+mylist = ( qwc (
+##Biostrings,
 DT,
-GEOquery,
+##GEOquery,
 GGally,
 Hmisc,
-RColorBrewer,
 RCurl,
-RMySQL,
 Rtsne,
 amap,
 bigmemory,
@@ -30,9 +25,7 @@ data.table,
 doMC,
 doParallel,
 editData,
-forcats,
 foreach,
-ggplot2,
 ggpubr,
 ggridges,
 ggthemes,
@@ -40,7 +33,6 @@ glue,
 gridExtra,
 gtable,
 knitr,
-magrittr,
 openssl,
 org.Hs.eg.db,
 pheatmap,
@@ -66,8 +58,12 @@ stringdist,
 stringr,
 tidyverse,
 viridis
-
-) ) }
+) )
+  for ( i in mylist ) {
+  ##try(remove.packages( i, '/usr/local/lib/R/library') )
+  ##try(remove.packages( i, '/usr/local/lib/R/site-library') )
+  install.packages(i)
+} } 
 
 
 install_it()
