@@ -1,14 +1,13 @@
-#
+#!/bin/bash
+
+mydate=`date  +"%Y%M%S"`
 
 ##sudo systemctl enable docker.service
 ##sudo systemctl start docker.service
 
-##export http_proxy=proxy-server:8080
-##export https_proxy=proxy-server:8080
-##export ftp_proxy=proxy-server:8080
+sudo docker build --pull --no-cache --label allshiny.$mydate -t allshiny.$mydate .
+##sudo docker build --label allshiny.$mydate -t allshiny.$mydate . 
 
-##sudo docker build --pull --no-cache --label allshiny.01.2020 -t allshiny.01.2020 .
-sudo docker build --label allshiny.01.2020 -t allshiny.01.2020 . 
 
 
 

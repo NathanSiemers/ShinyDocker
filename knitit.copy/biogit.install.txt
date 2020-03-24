@@ -1,0 +1,1 @@
+devtools::install_git('http://biogit.pri.bms.com/siemersn/knitit')  
