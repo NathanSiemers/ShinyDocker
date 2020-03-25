@@ -1,13 +1,6 @@
 sessionInfo()
 
-## local({
-##    r <- getOption("repos");
-##    r["CRAN"] <- "https://cran.rstudio.com/"
-##    options(repos=r)
-## })
-
 qwc = function(...) { as.character( unlist( as.list( match.call() )[ -1 ] ) ) }
-
 
 install_it = function() {
 mylist = ( qwc (
@@ -64,6 +57,5 @@ viridis
   ##try(remove.packages( i, '/usr/local/lib/R/site-library') )
   install.packages(i)
 } } 
-
 
 install_it()

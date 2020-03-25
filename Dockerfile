@@ -19,9 +19,10 @@ RUN apt-get install -y \
 RUN apt-get install -y \
 	libhdf5-dev 
 
+## Seurat is a monster, try to build early so if it fails we know sooner.
 RUN Rscript -e 'options("BioC_mirror" = "https://bioconductor.org"); setRepositories(ind = 1:2); install.packages("Seurat") '
 
-## install a bunch of packages
+## install a bunch of other packages, see r-package-install.R
 
 ADD r-package-install.R r-package-install.R
 RUN Rscript r-package-install.R

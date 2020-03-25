@@ -1,15 +1,4 @@
 
-sessionInfo()
-
-local({
-    r <- getOption("repos")
-    r["CRAN"] <- "http://cran.cnr.berkeley.edu/"
-    options(repos = r)
-})
-
-
-
-
 try( remove.packages(c('RSQLite', 'sqldf')) )
 try( system('rm -rf RSQLite*') )
 
