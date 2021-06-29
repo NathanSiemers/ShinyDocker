@@ -1,8 +1,0 @@
-#
-cd
-sudo docker run -d -p 80:3838 -v ~/ShinyLogs:/var/log/shiny-server -v ~/Shiny:/srv/shiny-server -v ~/Shiny/lib:/stf/biosrc/siemersn/R/lib allshiny.01.2020
-
-
-
-
-

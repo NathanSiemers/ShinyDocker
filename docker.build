@@ -2,11 +2,8 @@
 
 mydate=`date +%Y%m%d`
 
-sudo docker build --pull --no-cache --label allshiny.$mydate -t allshiny.$mydate .  
-
-touch CURRENT
-mv CURRENT PREVIOUS
-echo allshiny.$mydate > CURRENT
+docker build --label allshiny.$mydate .
+docker tag allshiny.$mydate allshiny:latest
 
 
 
