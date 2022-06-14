@@ -68,6 +68,7 @@ cranlist = qwc (
     shinyjs,
     shinythemes,
     shinyWidgets,
+    sqldf,
     stringdist,
     stringr,
     survival,

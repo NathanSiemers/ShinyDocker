@@ -1,7 +1,4 @@
-FROM rocker/shiny-verse:4.0.4
-
-## FROM rocker/shiny-verse
-## FROM rocker/shiny-verse:3.6.3
+FROM rocker/shiny-verse:4.2.0
 
 RUN   apt-get update 
 
@@ -12,7 +9,9 @@ RUN apt-get install -y \
       ##libmariadbclient-dev \
       libmariadb-dev \
       libglpk-dev \
-      libcurl4-openssl-dev git webalizer libbz2-dev libhdf5-dev 
+      libcurl4-openssl-dev git webalizer libbz2-dev libhdf5-dev \
+      sqlite3 \
+      libgeos++-dev libgeos-3.8.0 libgeos-c1v5 libgeos-dev libgeos-doc
 
 ################################################################
 ## install a ton of cran and bioconductor packages, see r-package-install.R
@@ -33,11 +32,9 @@ RUN Rscript -e  'devtools::install_github("hylasD/tSpace", build = TRUE, build_o
 ## necessary for TCGAGTEX and PC3, etc
 ##RUN Rscript -e 'remove.packages("RSQLite")'
 
-ADD RSQLite_2.2.7.tar.gz .
-ADD rsqlite-make.R rsqlite-make.R
-
-
-RUN Rscript rsqlite-make.R
+##ADD RSQLite_2.2.7.tar.gz .
+##ADD rsqlite-make.R rsqlite-make.R
+##RUN Rscript rsqlite-make.R
 
 ## make my little 'knitit' package
 ## only kept for some old apps
